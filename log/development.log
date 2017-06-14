@@ -1,0 +1,7 @@
+
+
+Started GET "/" for ::1 at 2017-06-14 19:50:34 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 421ms (Views: 411.0ms | ActiveRecord: 0.0ms)

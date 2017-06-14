@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TechnoRestore1</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="cerrar" align="right">
+    <%if user_signed_in? %>
+      <%= current_user.email %>
+        <br>
+        <%= link_to "Editar",edit_user_registration_path%>
+      <br>
+      <%= link_to "Cerrar sesion",destroy_user_session_path,method: :delete %>
+      <%else%>
+      <%= link_to "Iniciar sesion",new_user_session_path%>
+      <br>
+      <%= link_to "Crear cuenta",new_user_registration_path%>
+    <%end%>
+    </div>
+<%= yield %>
+
+</body>
+</html>
