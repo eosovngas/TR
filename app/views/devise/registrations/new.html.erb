@@ -45,7 +45,8 @@
     <%= f.text_field :Fonoalt %>
     </div>
       <td>
-    <%= f.collection_select  :usertype_id,Usertype.all,:id,:Nombre,prompt: "Seleccione Tipo"%>
+
+    <%= f.hidden_field :usertype_id,:value => 4%>
   </td>
   <%= "19025807-5".rut_valid? %>
   <div class="actions">
