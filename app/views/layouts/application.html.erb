@@ -15,23 +15,13 @@
   
 </head>
 <body>
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="cerrar" align="right">
-    <%if user_signed_in? %>
-      <%= current_user.email %>
-        <br>
-        <%= link_to "Editar",edit_user_registration_path%>
-      <br>
-      <%= link_to "Cerrar sesion",destroy_user_session_path,method: :delete %>
-      <%else%>
-      <%= link_to "Iniciar sesion",new_user_session_path%>
-      <br>
-      <%= link_to "Crear cuenta",new_user_registration_path%>
-    <%end%>
+
   <!-- Llamando al Navbar desde la carpeta compartidos -->
-  <%= render 'compartidos/navbar'%>
-    </div>
+  <%= render 'compartidos/navbar' %>
+  <!-- devise  -->
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
 <%= yield %>
 
 </body>
