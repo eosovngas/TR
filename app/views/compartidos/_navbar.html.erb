@@ -37,10 +37,10 @@
       <ul class="nav navbar-nav navbar-right">
       <!-- Validando usuario logueado boton salir -->
         <% if current_user.nil? %>
-        <li><a href="<%= new_user_session_path %>">Iniciar Sesion</a></li>
+        <li><a href="<%= new_user_session_path %>">Iniciar Sesión</a></li>
         <li><a href="<%= new_user_registration_path %>">Registrarse</a></li>
         <% else %>
-        <li><a href="<%= destroy_user_session_path %>" data-method="delete" >Salir</a></li>
+        <li><a href="<%= destroy_user_session_path %>" data-method="delete" >Cerrar Sesión</a></li>
         <% end %>
       <!-- Terminando validacion -->  
       </ul>
