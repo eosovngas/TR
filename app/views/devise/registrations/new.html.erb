@@ -1,57 +1,103 @@
-<h2>Sign up</h2>
+<div class="container"> 
+  <div class="row"> 
+    <div class="col-md-6 col-md-offset-3">
+      <div class= "jumbotron">
+        <legend><h2>Registrarte</h2></legend>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+          <div class= "form-group">
+            <div class="field">
+              <div>
+                <%= f.label :Nombre ,"Nombres" %>
+                <%= f.text_field :Nombre, autofocus: true, class: "form-control", placeholder: "Ingresa tus Nombres" %>
+              </div>
+            </div>
+          </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+          <div class= "form-group">
+            <div class="field">
+              <div>
+                <%= f.label :Apellido ,"Apellidos"%>
+                <%= f.text_field :Apellido, class: "form-control", placeholder: "Ingresa tus Apellidos"%>
+              </div>
+            </div>
+          </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-<div>
-  <%= f.label :Nombre ,"Ingrese su nombre"%>
-    <%= f.text_field :Nombre %>
-    </div>
-    <div>
-    <%= f.label :Apellido ,"Ingrese su Apellido"%>
-    <%= f.text_field :Apellido %>
-    </div>
-    <div>
-    <%= f.label :Rut ,"Ingrese su Rut"%>
-    <%= f.text_field :Rut %>
-    </div>
-    <div>
-    <%= f.label :Direccion ,"Ingrese su Direccion"%>
-    <%= f.text_field :Direccion %>
-    </div>
-    <div>
-    <%= f.label :Telefono ,"Ingrese su Telefono"%>
-   <%= f.text_field :Telefono %>
-   </div>
-   <div>
-    <%= f.label :Fonoalt ,"Ingrese su Fonoalt"%>
-    <%= f.text_field :Fonoalt %>
-    </div>
-      <td>
+          <div class= "form-group">
+            <div class="field">
+              <div>
+                <%= f.label :Rut ,"RUT"%>
+                <%= f.text_field :Rut, class: "form-control", placeholder: "Ingresa tu RUT" %>
+              </div>
+            </div>
+          </div>
 
-    <%= f.hidden_field :usertype_id,:value => 4%>
-  </td>
-  <%= "19025807-5".rut_valid? %>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+          <div class= "form-group">
+            <div class="field">
+              <div>
+                <%= f.label :Direccion ,"Direccion"%>
+                <%= f.text_field :Direccion, class: "form-control", placeholder: "Ingresa tu dirección"%>
+              </div>
+            </div>
+          </div>
 
-<%= render "devise/shared/links" %>
+          <div class= "form-group">
+            <div class="field">
+              <div>
+                <%= f.label :Telefono ,"Celular"%>
+                <%= f.text_field :Telefono , class: "form-control", placeholder: "Ingresa tu celular"%>
+              </div>
+            </div>
+          </div>
+
+          <div class= "form-group">
+            <div class="field">
+              <div>
+                <%= f.label :Fonoalt ,"Telefono alternativo"%>
+                <%= f.text_field :Fonoalt , class: "form-control", placeholder: "Ingresa tu telefono alternativo"%>
+              </div>
+            </div>
+          </div>
+
+          <div class= "form-group">
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, class: "form-control", placeholder: "correo@technorestore.cl" %>
+            </div>
+          </div>
+
+          <div class= "form-group">
+            <div class="field">
+              <%= f.label :Contraseña %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> caracteres minimo)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Ingresa tu contraseña"%>
+            </div>
+          </div>
+
+          <div class= "form-group">
+            <div class="field">
+              <%= f.label :Confirmar_Contraseña %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Ingresa nuevamente tu contraseña" %>
+            </div>
+          </div>
+            
+          <td>
+            <%= f.hidden_field :usertype_id,:value => 4%>
+          </td>
+
+          <div class="actions">
+            <%= f.submit "Registrarse", class: "btn btn-primary" %>
+          </div>
+
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+
+      </div>  
+    </div>  
+  </div>  
+</div>
